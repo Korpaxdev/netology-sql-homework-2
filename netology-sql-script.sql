@@ -3,26 +3,26 @@
 CREATE TABLE Genres
 (
     genre_id SERIAL PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) UNIQUE NOT NULL
 );
 
 CREATE TABLE Singers
 (
     singer_id SERIAL PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Albums
 (
     album_id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
+    name VARCHAR(100) NOT NULL,
     realese_year DATE
 );
 
 CREATE TABLE Tracks
 (
     track_id SERIAl PRIMARY KEY,
-    name VARCHAR(100),
+    name VARCHAR(100) NOT NULL,
     duration INT,
     album_id INT REFERENCES Albums(album_id)
 );
@@ -30,7 +30,7 @@ CREATE TABLE Tracks
 CREATE TABLE Collections
 (
     collection_id SERIAL PRIMARY KEY,
-    name VARCHAR(100),
+    name VARCHAR(100) NOT NULL,
     realese_year DATE
 );
 
