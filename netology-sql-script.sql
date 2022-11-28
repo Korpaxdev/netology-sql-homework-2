@@ -16,14 +16,14 @@ CREATE TABLE Albums
 (
     album_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    realese_year DATE
+    realese_year DATE NOT NULL
 );
 
 CREATE TABLE Tracks
 (
     track_id SERIAl PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    duration INT,
+    duration INT NOT NULL,
     album_id INT REFERENCES Albums(album_id)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE Collections
 (
     collection_id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    realese_year DATE
+    realese_year DATE NOT NULL
 );
 
 -- Create many - many relations 
